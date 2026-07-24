@@ -207,7 +207,6 @@ transactionList.appendChild(li);
 updateSummary();
 
 }
-
 function deleteTransaction(index){
 
 const confirmDelete = confirm("Are you sure you want to delete this transaction?");
@@ -222,7 +221,11 @@ saveTransactions();
 
 displayTransactions();
 
+showToast("Transaction deleted successfully!", "success");
+
 }
+
+
 
 addBtn.addEventListener("click",()=>{
 
@@ -236,18 +239,17 @@ return;
 
 transactions.push({
 
-description:description.value,
+description: description.value,
 
-amount:Number(amount.value),
+amount: Number(amount.value),
 
-category:category.value,
+category: category.value,
 
-date:date.value,
+date: date.value,
 
-type:type.value
+type: type.value
 
 });
-
 saveTransactions();
 
 displayTransactions();
@@ -282,12 +284,12 @@ transactions=[];
 saveTransactions();
 
 displayTransactions();
-showToast("Transaction added successfully!", "success");
+showToast("All transactions deleted successfully!", "success");
 
 });
 
 displayTransactions();
-showToast("Transaction deleted!", "success");
+
 function showToast(message, type = "success") {
 
     Toastify({
@@ -308,5 +310,6 @@ function showToast(message, type = "success") {
         }
 
     }).showToast();
+
 
 }
